@@ -6,6 +6,7 @@
     (python3.withPackages (python-pkgs: with python-pkgs; [
       jupyter-all
       ipywidgets
+      ipykernel
       python-dotenv
       matplotlib
       pandas
@@ -14,6 +15,7 @@
       torch
       torchaudio
       torchvision
+      diffusers
     ]))
   ];
 
@@ -32,6 +34,7 @@
     venv.enable = true;
     venv.requirements = ''
       huggingface_hub
+
     ''; # + (if pkgs.stdenv.isLinux then '' '')
   };
   # See full reference at https://devenv.sh/reference/options/
